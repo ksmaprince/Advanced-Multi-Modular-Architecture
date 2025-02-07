@@ -1,31 +1,62 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    id(BuildPlugins.KOTLIN_ANDROID)
+    id(BuildPlugins.ANDROID_APPLICATION)
 }
 
 android {
-    namespace = "com.khun.multimodulararchitecture"
-    compileSdk = 35
+    namespace = BuildConfig.APP_ID
+    compileSdk = BuildConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.khun.multimodulararchitecture"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = BuildConfig.APP_ID
+        minSdk = BuildConfig.MIN_SDK_VERSION
+        targetSdk = BuildConfig.TARGET_SDK_VERSION
+        versionCode = ReleaseConfig.VERSION_CODE
+        versionName = ReleaseConfig.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = TestBuildConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        getByName(BuildTypes.RELEASE) {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            isMinifyEnabled = Build.Release.isMinifyEnabled
+            isDebuggable = Build.Release.isDebuggable
+            enableUnitTestCoverage = Build.Release.enableUnitTestCoverage
         }
+        getByName(BuildTypes.DEBUG) {
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            versionNameSuffix = Build.Debug.versionNameSuffix
+            applicationIdSuffix = Build.Debug.applicationIdSuffix
+            isMinifyEnabled = Build.Debug.isMinifyEnabled
+            isDebuggable = Build.Debug.isDebuggable
+            enableUnitTestCoverage = Build.Debug.enableUnitTestCoverage
+        }
+        create(BuildTypes.RELEASE_EXTERNAL_QA) {
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            versionNameSuffix = Build.ReleaseExternalQa.versionNameSuffix
+            applicationIdSuffix = Build.ReleaseExternalQa.applicationIdSuffix
+            isMinifyEnabled = Build.ReleaseExternalQa.isMinifyEnabled
+            isDebuggable = Build.ReleaseExternalQa.isDebuggable
+            enableUnitTestCoverage = Build.ReleaseExternalQa.enableUnitTestCoverage
+        }
+    }
+    flavorDimensions.add(BuildDimensions.APP)
+    flavorDimensions.add(BuildDimensions.STORE)
+    productFlavors {
+        BuildFlavor.Google.create(this)
+        BuildFlavor.Huawei.create(this)
+        BuildFlavor.Driver.create(this)
+        BuildFlavor.Client.create(this)
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -41,19 +72,20 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(Dependencies.ANDROIDX_CORE_KTX)
+    implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
+    implementation(platform(Dependencies.ANDROIDX_COMPOSE))
+    implementation(Dependencies.ANDROIDX_UI)
+    implementation(Dependencies.ANDROIDX_COMPOSE_UI_GRAPHIC)
+    implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
+    implementation(Dependencies.ANDROIDX_COMPOSE_MATERIAL3)
+
+    testImplementation(TestDependencies.JUNIT)
+    androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
+    androidTestImplementation(TestDependencies.ANDROIDX_EXPRESSO_CORE)
+    androidTestImplementation(platform(TestDependencies.ANDROIDX_COMPOSE))//libs.androidx.compose.bom
+    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_JUNIT4)
+    debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TOOLING)
+    debugImplementation(TestDependencies.ANDROIDX_UI_TEST_MANIFEST)
 }
