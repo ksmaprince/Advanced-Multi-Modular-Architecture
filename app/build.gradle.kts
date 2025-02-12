@@ -1,6 +1,17 @@
+import build.BuildConfig
+import build.BuildCreator
+import build.BuildDimensions
+import build.BuildTypes
+import deps.Dependencies
+import flavors.BuildFlavor
+import release.ReleaseConfig
+import signing.BuildSigning
+import test.TestBuildConfig
+import test.TestDependencies
+
 plugins {
-    id(BuildPlugins.KOTLIN_ANDROID)
-    id(BuildPlugins.ANDROID_APPLICATION)
+    id(plugs.BuildPlugins.KOTLIN_ANDROID)
+    id(plugs.BuildPlugins.ANDROID_APPLICATION)
 }
 
 android {
@@ -17,41 +28,34 @@ android {
         testInstrumentationRunner = TestBuildConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
+    signingConfigs{
+        BuildSigning.Release(project).create(this)
+        BuildSigning.ReleaseExternalQA(project).create(this)
+        BuildSigning.Debug(project).create(this)
+    }
+
     buildTypes {
-        getByName(BuildTypes.RELEASE) {
+        BuildCreator.Release(project).create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            isMinifyEnabled = Build.Release.isMinifyEnabled
-            isDebuggable = Build.Release.isDebuggable
-            enableUnitTestCoverage = Build.Release.enableUnitTestCoverage
+            signingConfig = signingConfigs.getByName(BuildTypes.RELEASE)
         }
-        getByName(BuildTypes.DEBUG) {
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-            versionNameSuffix = Build.Debug.versionNameSuffix
-            applicationIdSuffix = Build.Debug.applicationIdSuffix
-            isMinifyEnabled = Build.Debug.isMinifyEnabled
-            isDebuggable = Build.Debug.isDebuggable
-            enableUnitTestCoverage = Build.Debug.enableUnitTestCoverage
+        BuildCreator.Debug(project).create(this).apply {
+            signingConfig = signingConfigs.getByName(BuildTypes.DEBUG)
         }
-        create(BuildTypes.RELEASE_EXTERNAL_QA) {
+        BuildCreator.ReleaseExternalQa(project).create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            versionNameSuffix = Build.ReleaseExternalQa.versionNameSuffix
-            applicationIdSuffix = Build.ReleaseExternalQa.applicationIdSuffix
-            isMinifyEnabled = Build.ReleaseExternalQa.isMinifyEnabled
-            isDebuggable = Build.ReleaseExternalQa.isDebuggable
-            enableUnitTestCoverage = Build.ReleaseExternalQa.enableUnitTestCoverage
+            signingConfig = signingConfigs.getByName(BuildTypes.RELEASE_EXTERNAL_QA)
         }
     }
     flavorDimensions.add(BuildDimensions.APP)
     flavorDimensions.add(BuildDimensions.STORE)
+
     productFlavors {
         BuildFlavor.Google.create(this)
         BuildFlavor.Huawei.create(this)
@@ -67,6 +71,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

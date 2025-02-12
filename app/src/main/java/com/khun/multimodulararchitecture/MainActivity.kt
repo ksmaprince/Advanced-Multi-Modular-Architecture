@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -11,7 +12,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.khun.info.MapProvider
 import com.khun.multimodulararchitecture.ui.theme.MultiModularArchitectureTheme
+import com.khun.provider.DataProvider
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +24,7 @@ class MainActivity : ComponentActivity() {
             MultiModularArchitectureTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = MapProvider.mapId,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -32,10 +35,25 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+
+    Column(modifier = modifier) {
+        Text(
+            text = "Base Url: ${BuildConfig.BASE_URL}!",
+            modifier = modifier
+        )
+        Text(
+            text = "DB Version: ${BuildConfig.DB_VERSION}!",
+            modifier = modifier
+        )
+        Text(
+            text = "Can Clear Cache: ${BuildConfig.CAN_CLEAR_CACHE}!",
+            modifier = modifier
+        )
+        Text(
+            text = "Map Key: ${BuildConfig.MAP_KEY}!",
+            modifier = modifier
+        )
+    }
 }
 
 @Preview(showBackground = true)

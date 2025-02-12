@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted = "false"
+        tools:ignore="NetworkSecurityConfig">
+        <domain includeSubdomains="true">qa.myapp.com</domain>
+        <pin-set>
+            <pin digest="SHA-256">skdjfakjljakfjajfakdjfafj</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>
