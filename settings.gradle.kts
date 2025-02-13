@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "MultiModularArchitecture"
 include(":app")
+include(":features:login")
+include(":features:home")

@@ -2,16 +2,26 @@ import build.BuildConfig
 import build.BuildCreator
 import build.BuildDimensions
 import build.BuildTypes
-import deps.Dependencies
+import deps.androidTestDeps
+import deps.androidx
+import deps.debugTestDeps
+import deps.hilt
+import deps.loginModule
+import deps.okHttp
+import deps.retrofit
+import deps.room
+import deps.testDeps
 import flavors.BuildFlavor
 import release.ReleaseConfig
 import signing.BuildSigning
 import test.TestBuildConfig
-import test.TestDependencies
 
 plugins {
     id(plugs.BuildPlugins.KOTLIN_ANDROID)
     id(plugs.BuildPlugins.ANDROID_APPLICATION)
+    id(plugs.BuildPlugins.ANDROID)
+    id("org.jetbrains.kotlin.plugin.compose")
+    id(plugs.BuildPlugins.KSP)
 }
 
 android {
@@ -76,21 +86,13 @@ android {
 }
 
 dependencies {
-
-    implementation(Dependencies.ANDROIDX_CORE_KTX)
-    implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
-    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
-    implementation(platform(Dependencies.ANDROIDX_COMPOSE))
-    implementation(Dependencies.ANDROIDX_UI)
-    implementation(Dependencies.ANDROIDX_COMPOSE_UI_GRAPHIC)
-    implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
-    implementation(Dependencies.ANDROIDX_COMPOSE_MATERIAL3)
-
-    testImplementation(TestDependencies.JUNIT)
-    androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
-    androidTestImplementation(TestDependencies.ANDROIDX_EXPRESSO_CORE)
-    androidTestImplementation(platform(TestDependencies.ANDROIDX_COMPOSE))//libs.androidx.compose.bom
-    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_JUNIT4)
-    debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TOOLING)
-    debugImplementation(TestDependencies.ANDROIDX_UI_TEST_MANIFEST)
+    loginModule()
+    androidx()
+    hilt()
+    room()
+    okHttp()
+    retrofit()
+    testDeps()
+    androidTestDeps()
+    debugTestDeps()
 }
