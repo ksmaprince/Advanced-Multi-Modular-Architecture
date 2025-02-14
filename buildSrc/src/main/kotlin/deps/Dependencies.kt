@@ -11,6 +11,8 @@ object Dependencies {
     const val ANDROIDX_COMPOSE_MATERIAL3 = "androidx.compose.material3:material3"
 
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${DependenciesVersions.HILT}"
+    const val HILT_COMPOSE = "androidx.hilt:hilt-work:${DependenciesVersions.HILT_COMPOSE}"
+    const val HILT_NAVIGATION = "androidx.hilt:hilt-navigation:${DependenciesVersions.HILT_COMPOSE}"
     const val HILT_COMPILER = "com.google.dagger:hilt-compiler:${DependenciesVersions.HILT}"
     const val HILT_AGP = "com.google.dagger:hilt-android-gradle-plugin:${DependenciesVersions.HILT}"
 
@@ -23,4 +25,5 @@ object Dependencies {
     const val ROOM_RUNTIME = "androidx.room:room-runtime:${DependenciesVersions.ROOM}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${DependenciesVersions.ROOM}"
     const val ROOM_KTX = "androidx.room:room-ktx:${DependenciesVersions.ROOM}"
+
 }

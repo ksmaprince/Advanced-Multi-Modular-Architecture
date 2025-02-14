@@ -1,0 +1,37 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:////PointingToDeclaration/-modularization-app/[root]/index.html
+$dokka.location:/MapProvider///PointingToDeclaration/-modularization-app/[root]/[-j-v-m]-map-provider/index.html
+$dokka.location:/MapProvider/mapId/#/PointingToDeclaration/-modularization-app/[root]/[-j-v-m]-map-provider/map-id.html
+$dokka.location:com.khun.info////PointingToDeclaration/-modularization-app/com.khun.info/index.html
+$dokka.location:com.khun.info/MapProvider///PointingToDeclaration/-modularization-app/com.khun.info/[-j-v-m]-map-provider/index.html
+$dokka.location:com.khun.info/MapProvider/mapId/#/PointingToDeclaration/-modularization-app/com.khun.info/[-j-v-m]-map-provider/map-id.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme////PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/index.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//MultiModularArchitectureTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/[-j-v-m]-multi-modular-architecture-theme.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//Pink40/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-pink40.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//Pink80/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-pink80.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//Purple40/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-purple40.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//Purple80/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-purple80.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//PurpleGrey40/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-purple-grey40.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//PurpleGrey80/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-purple-grey80.html
+$dokka.location:com.khun.multimodulararchitecture.ui.theme//Typography/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture.ui.theme/-typography.html
+$dokka.location:com.khun.multimodulararchitecture////PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/index.html
+$dokka.location:com.khun.multimodulararchitecture//Greeting/#kotlin.String#[Error type: Unresolved type for Modifier]/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-greeting.html
+$dokka.location:com.khun.multimodulararchitecture//Greeting/#kotlin.String#androidx.compose.ui.Modifier/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-greeting.html
+$dokka.location:com.khun.multimodulararchitecture//GreetingPreview/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-greeting-preview.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleInstrumentedTest///PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-instrumented-test/index.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleInstrumentedTest/ExampleInstrumentedTest/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-instrumented-test/-example-instrumented-test.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleInstrumentedTest/useAppContext/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-instrumented-test/use-app-context.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleUnitTest///PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-unit-test/index.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleUnitTest/ExampleUnitTest/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-unit-test/-example-unit-test.html
+$dokka.location:com.khun.multimodulararchitecture/ExampleUnitTest/addition_isCorrect/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-example-unit-test/addition_is-correct.html
+$dokka.location:com.khun.multimodulararchitecture/MainActivity///PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-main-activity/index.html
+$dokka.location:com.khun.multimodulararchitecture/MainActivity/MainActivity/#/PointingToDeclaration/-modularization-app/com.khun.multimodulararchitecture/[-j-v-m]-main-activity/-main-activity.html
+$dokka.location:com.khun.provider////PointingToDeclaration/-modularization-app/com.khun.provider/index.html
+$dokka.location:com.khun.provider/DataProvider///PointingToDeclaration/-modularization-app/com.khun.provider/[-j-v-m]-data-provider/index.html
+$dokka.location:com.khun.provider/DataProvider/username/#/PointingToDeclaration/-modularization-app/com.khun.provider/[-j-v-m]-data-provider/username.html
+com.khun.info
+com.khun.multimodulararchitecture
+com.khun.multimodulararchitecture.ui.theme
+com.khun.provider
+

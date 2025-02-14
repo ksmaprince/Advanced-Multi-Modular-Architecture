@@ -1,0 +1,11 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.khun.home////PointingToDeclaration/-modularization-app/com.khun.home/index.html
+$dokka.location:com.khun.home/ExampleInstrumentedTest///PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-instrumented-test/index.html
+$dokka.location:com.khun.home/ExampleInstrumentedTest/ExampleInstrumentedTest/#/PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-instrumented-test/-example-instrumented-test.html
+$dokka.location:com.khun.home/ExampleInstrumentedTest/useAppContext/#/PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-instrumented-test/use-app-context.html
+$dokka.location:com.khun.home/ExampleUnitTest///PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-unit-test/index.html
+$dokka.location:com.khun.home/ExampleUnitTest/ExampleUnitTest/#/PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-unit-test/-example-unit-test.html
+$dokka.location:com.khun.home/ExampleUnitTest/addition_isCorrect/#/PointingToDeclaration/-modularization-app/com.khun.home/[-j-v-m]-example-unit-test/addition_is-correct.html
+com.khun.home
+

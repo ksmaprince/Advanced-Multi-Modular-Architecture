@@ -1,3 +1,3 @@
 object MapProvider {
-    const val mapId = "12345-client"
+  const val mapId = "12345-client"
 }

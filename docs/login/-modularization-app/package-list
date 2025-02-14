@@ -1,0 +1,14 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.khun.login////PointingToDeclaration/-modularization-app/com.khun.login/index.html
+$dokka.location:com.khun.login/ExampleInstrumentedTest///PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-instrumented-test/index.html
+$dokka.location:com.khun.login/ExampleInstrumentedTest/ExampleInstrumentedTest/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-instrumented-test/-example-instrumented-test.html
+$dokka.location:com.khun.login/ExampleInstrumentedTest/useAppContext/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-instrumented-test/use-app-context.html
+$dokka.location:com.khun.login/ExampleUnitTest///PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-unit-test/index.html
+$dokka.location:com.khun.login/ExampleUnitTest/ExampleUnitTest/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-unit-test/-example-unit-test.html
+$dokka.location:com.khun.login/ExampleUnitTest/addition_isCorrect/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-example-unit-test/addition_is-correct.html
+$dokka.location:com.khun.login/Test///PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-test/index.html
+$dokka.location:com.khun.login/Test/Test/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-test/-test.html
+$dokka.location:com.khun.login/Test/count/#/PointingToDeclaration/-modularization-app/com.khun.login/[-j-v-m]-test/count.html
+com.khun.login
+

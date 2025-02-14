@@ -23,6 +23,9 @@ fun DependencyHandler.okHttp(){
 
 fun DependencyHandler.hilt(){
     implementation(Dependencies.HILT_ANDROID)
+    implementation(Dependencies.HILT_COMPOSE)
+    implementation(Dependencies.HILT_NAVIGATION)
+    ksp(Dependencies.HILT_AGP)
     ksp(Dependencies.HILT_COMPILER)
 }
 
@@ -46,6 +49,19 @@ fun DependencyHandler.homeModule(){
     moduleImplementation(project(":features:home"))
 }
 
+fun DependencyHandler.dataModule() {
+    moduleImplementation(project(":core:data"))
+}
+
+fun DependencyHandler.domainModule() {
+    moduleImplementation(project(":core:domain"))
+}
+
+fun DependencyHandler.presentationModule() {
+    moduleImplementation(project(":core:presentation"))
+}
+
+
 fun DependencyHandler.testDeps(){
     testImplementation(TestDependencies.JUNIT)
 }
@@ -61,5 +77,17 @@ fun DependencyHandler.androidTestDeps(){
 
 fun DependencyHandler.debugTestDeps(){
     debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TOOLING)
+    debugImplementation(TestDependencies.ANDROIDX_UI_TEST_MANIFEST)
+}
+
+
+fun DependencyHandler.testImplDeps() {
+    androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
+    androidTestImplementation(TestDependencies.ANDROIDX_EXPRESSO_CORE)
+    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_JUNIT4)
+}
+
+fun DependencyHandler.testDebugDeps() {
+    debugImplementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
     debugImplementation(TestDependencies.ANDROIDX_UI_TEST_MANIFEST)
 }

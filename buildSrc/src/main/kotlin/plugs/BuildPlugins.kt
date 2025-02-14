@@ -9,4 +9,10 @@ object BuildPlugins {
     const val KAPT = "kapt"
     const val KSP = "com.google.devtools.ksp"
     const val HILT = "com.google.dagger.hilt.android"
+    const val KTLINT = "ktlint-settings"
+    const val SPOTLESS = "spotless-settings"
+    const val DETEKT = "detekt-settings"
+    const val UPDATE_DEPS_VERSION = "update_dependencies"
+    const val DOKKA = "dokka-settings"
+
 }

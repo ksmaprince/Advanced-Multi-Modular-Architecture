@@ -1,5 +1,5 @@
 package com.khun.info
 
 object MapProvider {
-    const val mapId = "12345-driver"
+  const val mapId = "12345-driver"
 }
