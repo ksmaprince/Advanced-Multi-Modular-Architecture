@@ -1,7 +1,9 @@
 import deps.androidTestDeps
 import deps.androidx
+import deps.dataModule
 import deps.debugTestDeps
 import deps.hilt
+import deps.retrofit
 import deps.room
 import deps.testDeps
 import plugs.SharedLibraryGradlePlugin
@@ -18,6 +20,8 @@ android {
 
 dependencies {
   androidx()
+  retrofit()
+  dataModule()
   hilt()
   room()
   testDeps()
