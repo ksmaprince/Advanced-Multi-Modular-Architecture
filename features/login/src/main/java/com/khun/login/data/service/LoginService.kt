@@ -1,7 +1,7 @@
-package com.khun.login.service
+package com.khun.login.data.service
 
-import com.khun.login.requests.LoginRequestBody
-import com.khun.login.responses.LoginResponse
+import com.khun.login.data.requests.LoginRequestBody
+import com.khun.login.data.responses.UserResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.Body
@@ -15,7 +15,7 @@ interface LoginService {
   @POST("$BASE_URL/Auth/Login")
   fun login(
     @Body loginRequestBody: LoginRequestBody,
-  ): Deferred<Response<LoginResponse>>
+  ): Deferred<Response<UserResponse>>
 
   @POST("$BASE_URL/Auth/ForgetPassword")
   fun forgetPassword(

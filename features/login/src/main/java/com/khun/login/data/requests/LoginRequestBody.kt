@@ -1,4 +1,4 @@
-package com.khun.login.requests
+package com.khun.login.data.requests
 
 import com.google.gson.annotations.SerializedName
 

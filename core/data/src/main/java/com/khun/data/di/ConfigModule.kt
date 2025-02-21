@@ -3,6 +3,7 @@ package com.khun.data.di
 import com.khun.data.constants.ACCESS_TOKEN_TAG
 import com.khun.data.constants.CLIENT_ID_TAG
 import com.khun.data.constants.LANGUAGE_TAG
+import com.khun.data.constants.USER_ID_TAG
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class ConfigModule {
+  @Provides
+  @Singleton
+  @Named(USER_ID_TAG)
+  fun provideUserId(): () -> String? {
+    return { "" } // todo get user id from user prefs later
+  }
+
   @Provides
   @Singleton
   @Named(LANGUAGE_TAG)

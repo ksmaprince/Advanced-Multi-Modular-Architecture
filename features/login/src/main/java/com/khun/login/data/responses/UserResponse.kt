@@ -1,14 +1,14 @@
-package com.khun.login.responses
+package com.khun.login.data.responses
 
 import com.google.gson.annotations.SerializedName
 
-class LoginResponse(
+class UserResponse(
   @SerializedName("id")
-  val id: String,
+  val id: String?,
   @SerializedName("fullName")
-  val fullName: String,
+  val fullName: String?,
   @SerializedName("email")
-  val email: String,
+  val email: String?,
   @SerializedName("photo")
-  val photo: String,
+  val photo: String?,
 )

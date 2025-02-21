@@ -1,8 +1,12 @@
 package com.khun.data.di
 
+import android.content.Context
+import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.khun.data.BuildConfig
 import com.khun.data.OkHttpClientProvider
+import com.khun.data.connectivity.NetworkMonitorImplementer
+import com.khun.data.connectivity.NetworkMonitorInterface
 import com.khun.data.constants.HEADER_INTERCEPTOR_TAG
 import com.khun.data.constants.LOGGING_INTERCEPTOR_TAG
 import com.khun.data.factory.ServicFactory
@@ -21,6 +25,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
+
+  @Provides
+  @Singleton
+  fun provideGson(): Gson {
+    return Gson()
+  }
+
+  @Provides
+  @Singleton
+  fun provideNetworkMonitor(context: Context): NetworkMonitorInterface {
+    return NetworkMonitorImplementer(context)
+  }
 
   @Provides
   @Singleton
