@@ -5,6 +5,8 @@ import build.BuildTypes
 import deps.androidTestDeps
 import deps.androidx
 import deps.dataModule
+import deps.dataStore
+import deps.dataStoreModule
 import deps.debugTestDeps
 import deps.domainModule
 import deps.hilt
@@ -100,6 +102,8 @@ dependencies {
   homeModule()
   dataModule()
   domainModule()
+  dataStore()
+  dataStoreModule()
   presentationModule()
   androidx()
   hilt()

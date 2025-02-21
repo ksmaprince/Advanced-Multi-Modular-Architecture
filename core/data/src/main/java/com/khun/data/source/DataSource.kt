@@ -1,6 +1,6 @@
 package com.khun.data.source
 
-interface DataSource {
+interface DataSource<T> {
   companion object {
 
     const val SUCCESS = 200

@@ -1,5 +1,6 @@
 import deps.androidTestDeps
 import deps.androidx
+import deps.dataStore
 import deps.debugTestDeps
 import deps.hilt
 import deps.okHttp
@@ -24,6 +25,7 @@ dependencies {
   okHttp()
   retrofit()
   hilt()
+  dataStore()
   testDeps()
   androidTestDeps()
   debugTestDeps()

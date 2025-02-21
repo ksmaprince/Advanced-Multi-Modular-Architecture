@@ -10,6 +10,12 @@ fun DependencyHandler.room(){
     ksp(Dependencies.ROOM_COMPILER)
 }
 
+fun DependencyHandler.dataStore(){
+    implementation(Dependencies.DATA_STORE)
+    implementation(Dependencies.KOTLIN_COLLECTION)
+    implementation(Dependencies.KOTLIN_SERIALIZATION)
+}
+
 fun DependencyHandler.retrofit(){
     implementation(Dependencies.RETROFIT)
     implementation(Dependencies.RETROFIT_CONVERTER_GSON)
@@ -51,6 +57,10 @@ fun DependencyHandler.homeModule(){
 
 fun DependencyHandler.dataModule() {
     moduleImplementation(project(":core:data"))
+}
+
+fun DependencyHandler.dataStoreModule() {
+    moduleImplementation(project(":core:datastore"))
 }
 
 fun DependencyHandler.domainModule() {
